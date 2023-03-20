@@ -11,4 +11,9 @@ export class AppController {
   getHello() {
     return 'Hello World!';
   }
+
+  @Get('test')
+  test() {
+    return 'this is test1';
+  }
 }

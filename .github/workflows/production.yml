@@ -24,3 +24,13 @@ jobs:
       - uses: nrwl/nx-set-shas@v3
       - run: npm i
       - run: npx nx affected --target=build --parallel=3
+
+  deployment:
+    name: Deployment
+    runs-on: self-hosted
+    steps:
+      - name: Deploying application using pm2
+        working-directory: /home/ictd-sison/Documents/experiments/runners/actions-runner/_work/nx-sandbox
+        run: |
+          pm2 start ecosystem.config.js
+          pm2 save
