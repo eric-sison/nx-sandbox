@@ -21,4 +21,9 @@ export class AppController {
   test2() {
     return 'this is test2';
   }
+
+  @Get('test3')
+  test3() {
+    return 'this is test3';
+  }
 }
