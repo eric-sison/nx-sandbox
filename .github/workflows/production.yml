@@ -4,13 +4,14 @@ on:
     branches:
       - main
 jobs:
-  code_sync: Synching
-  runs-on: self-hosted
-  steps:
-    - name: Pulling code base from remote branch to local branch
-      run: |
-        git checkout main
-        git pull origin main
+  sync:
+    name: Synching
+    runs-on: self-hosted
+    steps:
+      - name: Pulling latest code from remote repository's production branch
+        run: |
+          git checkout main
+          git pull origin main
 
   building:
     name: Building
