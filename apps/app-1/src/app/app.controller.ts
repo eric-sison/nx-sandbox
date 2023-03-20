@@ -12,8 +12,13 @@ export class AppController {
     return 'Hello World!';
   }
 
-  @Get('test')
-  test() {
+  @Get('test1')
+  test1() {
     return 'this is test1';
+  }
+
+  @Get('test2')
+  test2() {
+    return 'this is test2';
   }
 }

@@ -27,6 +27,7 @@ jobs:
 
   deployment:
     name: Deployment
+    needs: building
     runs-on: self-hosted
     steps:
       - name: Deploying application using pm2
