@@ -8,7 +8,6 @@ on:
 jobs:
   building:
     name: Building
-    needs: staging
     runs-on: self-hosted
     steps:
       - uses: actions/checkout@v2
