@@ -6,7 +6,7 @@ on:
   pull_request:
 
 jobs:
-  sync: Synching
+  synching: Synching
   runs-on: self-hosted
   steps:
     - name: Pulling code base from remote branch to local branch
