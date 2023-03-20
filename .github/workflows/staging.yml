@@ -7,6 +7,7 @@ on:
 
 jobs:
   staging:
+    name: Staging
     runs-on: self-hosted
     steps:
       - uses: actions/checkout@v2
@@ -18,4 +19,15 @@ jobs:
       - run: npx nx format:check
       - run: npx nx affected --target=lint --parallel=3
       - run: npx nx affected --target=test --parallel=3 --configuration=ci
+
+  building:
+    name: Building
+    needs: staging
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: nrwl/nx-set-shas@v3
+      - run: npm i
       - run: npx nx affected --target=build --parallel=3
