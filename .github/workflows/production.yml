@@ -1,0 +1,19 @@
+name: Production
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  building:
+    name: Building
+    needs: staging
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: nrwl/nx-set-shas@v3
+      - run: npm i
+      - run: npx nx affected --target=build --parallel=3
