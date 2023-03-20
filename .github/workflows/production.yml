@@ -15,7 +15,7 @@ jobs:
 
   building:
     name: Building
-    needs: code_sync
+    needs: sync
     runs-on: self-hosted
     steps:
       - uses: actions/checkout@v2
